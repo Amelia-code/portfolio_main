@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Soyoung Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--xeicon css-->
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<!--openSansFont css-->	
+<link href="css/openSansFont.css" rel="stylesheet">
+<!--playFair css-->	
+<link href="css/playFair.css" rel="stylesheet">	
+<!--fancybox css-->
+<link href="css/jquery.fancybox.css" rel="stylesheet">
+<!--swiper css-->
+<link href="css/swiper.min.css" rel="stylesheet">
+<link href="css/nanumsquare.css" rel="stylesheet">
+<!--반응형 css-->
+<link href="css/RWD_PC.css" rel="stylesheet">
+<link href="css/RWD_TABLET.css" rel="stylesheet">
+<link href="css/RWD_MOBILE.css" rel="stylesheet">
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+	
+<script>
+	$(function(){
+		
+		var $header = $('header');
+		
+		$(window).scroll(function(){
+			var cur_pos = $(this).scrollTop();
+			
+			if(cur_pos >= $header.outerHeight()) {
+				$header.addClass('sticky');
+			}else{
+				$header.removeClass('sticky');
+			}
+		});//스크롤 이벤트 
+		
+		
+		//메뉴버튼, 닫기 버튼 
+		$('.menu-button').click(function(){
+			$('nav').fadeIn();
+		});
+		$('.close-btn').click(function(){
+			$('nav').fadeOut();
+		});
+		
+		//메뉴를 클릭하면 해당되는 페이지가 자동 애니메이트 
+		var navi = $('nav');
+		var headerHeight = $('header').outerHeight();
+		
+		navi.find('a').click(function(e){
+			e.preventDefault();
+			var attribute = $(this).attr('href');
+			$('body,html').animate({scrollTop:$(attribute).offset().top});
+		});
+	});
+</script>
+	
+</head>
+
+<body>
+	<div class="site-wrap">
+		<header>
+			<div class="h-area">
+				<h1 class="logo">Soyoung portfolio</h1>
+				<div class="menu-button"><i class="xi-align-right"></i></div>
+				<nav>
+					<div class="close-btn">
+						<img src="img/x_btn.png" alt="메뉴닫기버튼">
+					</div>
+					<ul>
+						<li><a href=".site-wrap">Home</a></li>
+						<li><a href=".skill-block">Skill</a></li>
+						<li><a href=".pf-block">Portfolio</a></li>
+						<li><a href=".gallery-block">Gallery</a></li>
+					</ul>
+					
+					<!--<div class="fff">
+					</div>-->
+				</nav>
+			</div><!--h-area-->
+		</header>
+		
+		<section>
+			<article class="type-block">
+				<div class="type-ani">
+					<!-- type 라이브러리 구조 -->
+					<h2>Hey there, <span class="typed-words"></span></h2>
+					<p>Thank you for your visit. This is So Young's portfolio.</p>
+				</div>
+				<script src="js/typed.js"></script>
+				<script>
+					var typed = new Typed('.typed-words', {
+						strings: ["I am Web Publisher","UI/UX Design","Figma Prototyping", "Responsible Web Design"],
+						typeSpeed: 80,
+						backSpeed: 80,
+						backDelay: 4000,
+						startDelay: 1000,
+						loop: true,
+						showCursor: true
+					});
+				</script>
+			</article><!--type-block end-->
+			
+			<article class="slide-block">
+				<div class="main-slider">
+					<!-- Swiper -->
+					<div class="swiper-container m-slide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="http://star4023.dothome.co.kr"><img src="img/Free-Web-Browser & iMac Mockup PSD.jpg" alt="slide01"></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="http://ysy3012000.dothome.co.kr"><img src="img/Mockup2.jpg" alt="slide02"></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="https://www.figma.com/proto/09PR4hxjSfnboOksaDv05w/%EC%9C%A0%EC%86%8C%EC%98%81_%ED%94%BC%EA%B7%B8%EB%A7%88%EC%88%98%EC%A0%95?node-id=5%3A14&scaling=scale-down"> <img src="img/Mockuppone2.jpg" alt="slide03"></a>
+							</div>
+						</div>
+					</div><!--swiper end-->
+					
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					
+				</div><!--Main-slider-->
+
+				<script>
+					var mSlide = new Swiper('.m-slide', {
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+						pagination: {
+							el: '.swiper-pagination',
+						},
+					});
+				</script>
+			</article><!--slide-block end-->
+			
+			<article class="skill-block a-block" id="a1">
+				<div class="my-skill">
+					<h3 class="sub-title">My Skill for Web Publishing</h3>
+					<p class="sub-text">  웹 퍼블리싱을 배우면서 퍼블리싱에 필요한 adobe사의 프로그램도 배웠습니다. 
+						adobe사의 프로그램을 배우면서 흥미를 느껴 좀 더 심화적으로<br> 
+						배우면서 포토샵 1급, 일러스트 2급, 자격증을 취득했습니다. 그리고 포토샵이랑 일러스트 말고도 인디자인, 피그마 등 다른 프로그램도 다룰 수 있습니다. 그 외에  웹 디자인 기능사 자격증도 취득했습니다.
+					</p>
+					
+					
+					<!-- Swiper -->
+					  <div class="swiper-container skill-slide">
+						<div class="swiper-wrapper">
+						    <div class="swiper-slide">
+								<img src="img/Photoshop.png" alt="포토샵아이콘">
+								<h5 class="skill-title">GTQ Photoshop 1st Grade</h5>
+								<p class="skill-text">KPC, January 2020</p>
+						    </div>
+							
+							<div class="swiper-slide">
+								<img src="img/Illustrator.png" alt="일러스트아이콘">
+								<h5 class="skill-title">GTQ illustrator 2st Grade</h5>
+								<p class="skill-text">KPC, January 2020</p>
+						    </div>
+							
+							<div class="swiper-slide">
+								<img src="img/Dreamweaver.png" alt="드림위버아이콘">
+								<h5 class="skill-title">Web Design Functional History</h5>
+								<p class="skill-text">HRD, July 2016</p>
+						    </div>
+							
+							<div class="swiper-slide">
+								<img src="img/InDesign.png" alt="인디자인아이콘">
+								<h5 class="skill-title">design editor</h5>
+								<p class="skill-text">Editorial Design</p>
+						    </div>
+							
+							<div class="swiper-slide">
+								<img src="img/Frame_2.png" alt="피그마아이콘">
+								<h5 class="skill-title">Prototyping Tool</h5>
+								<p class="skill-text">Figma Prototyping</p>
+						    </div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+					  </div>
+				</div><!--my-skill end-->
+				
+				<script>
+					var skillSlide = new Swiper('.skill-slide', {
+						slidesPerView: 4,
+						spaceBetween: 20,
+						pagination: {
+							el: '.swiper-pagination',
+							clickable: true,
+						},
+						//반응형 - 
+						breakpoints: {
+							//360이상 
+							360: {
+								slidesPerView: 2,
+								spaceBetween: 10,
+							},
+							//768px 이상
+							768: {
+								slidesPerView: 3,
+								spaceBetween: 15,
+							},
+							//1024px 이상 
+							1024: {
+								slidesPerView: 4,
+								spaceBetween: 15,
+							}
+						}
+					});
+				</script>
+			</article><!--skill-block end-->
+			
+			<article class="pf-block a-block">
+				<div class="my-portfolio">
+					<h3 class="sub-title">Hey there, My portfolio</h3>
+					<p class="sub-text">UXUI디자인하고 GIF디자인을 디자인 해봤습니다. UXUI는 사용자가 편하게 사용할수 있도록 구조를 버튼을 
+						사용자가 편하게 사용할 수 있는데에 두고 상품은 보기 쉽게 구조를 작성했습니다. 그리고 색상을 검은색, 흰색 무채색으로 배색해서 
+						심플하고 트렌디하게 보이도록 했습니다. GIF는 애니메이션 효과를 주어 사용자의 눈에 띄도록 제작하고 밑에 부가 설명을 주었습니다. </p>
+					
+					<div class="pf-area">
+					<!-- Swiper -->
+					  <div class="swiper-container pf-slide">
+						<div class="swiper-wrapper">
+						    <div class="swiper-slide">
+								<a href="img/cat.gif" data-fancybox="gif">
+									<img src="img/cat.jpg" alt="베스킨이미킨">
+								</a>
+						    </div>
+							
+							<div class="swiper-slide">
+								<a href="img/gif1.gif" data-fancybox="gif" >
+									<img src="img/gif1.jpg" alt="베스킨이미킨">
+								</a>
+						    </div>
+							
+							<div class="swiper-slide">
+								<a href="img/mo.jpg" data-fancybox="jpg">
+									<img src="img/mo.jpg" alt="베스킨이미킨">
+								</a>
+						    </div>
+							
+							<div class="swiper-slide">
+								<a href="img/Mockuplast.jpg">
+									<img src="img/Mockuplast.jpg" alt="베스킨이미킨">
+								</a>
+						    </div>
+							
+						
+						</div>
+						
+					  </div><!--swiper-container end-->
+					
+					  <!-- Add Pagination -->
+					  <div class="pf-pagination"></div>
+						  
+					  <div class="swiper-button-next pf-button-next"></div>
+					  <div class="swiper-button-prev pf-button-prev"></div>
+					</div><!--pf-area end-->
+				</div><!--my-portfolio end-->
+				
+				<script>
+					var pfSlide = new Swiper('.pf-slide', {
+						slidesPerView: 3,
+						spaceBetween: 20,
+						pagination: {
+							el: '.pf-pagination',
+							clickable: true,
+						},
+						navigation: {
+							nextEl: '.pf-button-next',
+							prevEl: '.pf-button-prev',
+						},
+						//반응형 - 
+						breakpoints: {
+							//360이상 
+							360: {
+								slidesPerView: 1,
+								spaceBetween: 10,
+							},
+							//768px 이상
+							768: {
+								slidesPerView: 2,
+								spaceBetween: 15,
+							},
+							//1024px 이상 
+							1024: {
+								slidesPerView: 3,
+								spaceBetween: 15,
+							}
+						}
+					});
+					
+					$().fancybox({
+						selector : '.pf-slide a:visible'
+					});
+				
+				</script>
+			</article><!--pf-block end-->
+			
+			<article class="gallery-block a-block">
+				<h3 class="sub-title">My Gallery</h3>
+				<p class="sub-text"> 사용자 관찰조사를 통해 
+					사용자 경혐이 어떻게 이루어지고 있는지를 알아보고 사용자 관살조사 보고서를 직성해보았습니다.
+					 일러스트로 PPT 레이아웃을 컨셉에 맞게 디자인을 해보았습니다.</p>
+				
+				<div class="a-fancybox">
+						<!--a태그 href="큰이미지 삽입"-->
+					  <a href="img/userreport01.jpg" data-fancybox="images">
+						  <!--img태그 src="작은이미지 삽입"-->
+						<img src="img/userreport01.jpg" alt="report1"/>
+					  </a>
+
+					  <a href="img/userreport02.jpg" data-fancybox="images">
+						<img src="img/userreport02.jpg" alt="report2" />
+					  </a>
+
+					  <a href="img/userreport03.jpg" data-fancybox="images">
+						<img src="img/userreport03.jpg" alt="report3"/>
+					  </a>
+
+					  <a href="img/userreport04.jpg" data-fancybox="images">
+						<img src="img/userreport04.jpg" alt="report4" />
+					  </a>
+
+					  <a href="img/userreport05.jpg" data-fancybox="images">
+						<img src="img/userreport05.jpg" alt="report5" />
+					  </a>
+
+					  <a href="img/userreport06.jpg" data-fancybox="images">
+						<img src="img/userreport06.jpg" alt="report6" />
+					  </a>
+
+					  <a href="img/userreport07.jpg" data-fancybox="images">
+						<img src="img/userreport07.jpg" alt="report7" />
+					  </a>
+
+					  <a href="img/userreport08.jpg" data-fancybox="images">
+						<img src="img/userreport08.jpg" alt="report8" />
+					  </a>
+					
+					  <a href="img/userreport09.jpg" data-fancybox="images">
+						<img src="img/userreport09.jpg" alt="report9" />
+					  </a>
+
+					  <a href="img/userreport10.jpg" data-fancybox="images">
+						<img src="img/userreport10.jpg" alt="report10" />
+					  </a>
+
+					  <a href="img/userreport11.jpg" data-fancybox="images">
+						<img src="img/userreport11.jpg" alt="report11" />
+					  </a>
+
+					  <a href="img/userreport12.jpg" data-fancybox="images">
+						<img src="img/userreport12.jpg" alt="report12" />
+					  </a>
+				</div>
+				<script>
+					$().fancybox({
+						selector : '.a-fancybox a:visible'
+					});
+				</script>
+			</article>
+		</section>
+		
+		<footer>
+			<div class="footer-top">
+				<div class="ezen-info">
+					<p class="info-title">EZEN ACADEMY<br>COMPUTER ART SCHOOL</p>
+					<p class="info-text"></p>
+				</div>
+				
+				<div class="quick-link">
+					<p class="info-title">Quick-link</p>
+					<nav>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#a1">Skill</a></li>
+							<li><a href=".pf-block">Portfolio</a></li>
+							<li><a href=".gallery-block">Gallery</a></li>
+						</ul>
+					</nav>
+				</div>
+				
+				<div class="f-sns">
+					<p class="info-title">Follow Me</p>
+					<ul>
+						<li><a href="#"><i class="xi-youtube-play"></i></a></li>
+						<li><a href="#"><i class="xi-facebook"></i></a></li>
+						<li><a href="#"><i class="xi-twitter"></i></a></li>
+						<li><a href="#"><i class="xi-instagram"></i></a></li>
+					</ul>
+					<p class="info-title">E-mail</p>
+					<p class="info-text">teagreen0317@gmail.com</p>
+				</div>
+			</div><!--footer-top-->
+			
+			<div class="footer-bottom">
+				<p class="info-text">Copyright digital design 2th so young, Yu all right reserved</p>
+			</div><!--footer-bottom-->
+		</footer>
+	</div><!--site-wrap end-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

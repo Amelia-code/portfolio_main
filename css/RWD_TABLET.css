@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* RWD(Responsible Web Design) TABLET*/
+
+/* 미디어쿼리 -화면크기가 1024px 이하이면 괄호안의 스타일 적용 */
+@media screen and (max-width:1024px) {
+	.h-area { width: 90%; }
+	.type-block { height: 540px; }
+
+	.type-ani {
+		width: 80%;
+		padding-top: 140px;
+	}
+	.type-ani h2 { font-size: 4.7vw; }
+	.type-ani p { font-size: 1.6vw; }
+	
+	.slide-block { padding-bottom: 80px; }
+	.main-slider { width: 80%; }
+	.main-slider .swiper-button-next::after,
+	.main-slider .swiper-button-prev::after { font-size: 30px; }
+	
+	
+	.my-skill .skill-slide { margin-top: 40px;  }
+	
+	.a-block { width: 80%; }
+	.pf-block { padding-top: 30px; }
+	.my-portfolio .pf-slide { margin-top: 40px; }
+	
+	.my-portfolio .swiper-button-next { right: -5%; top: 41%; }
+    .my-portfolio .swiper-button-prev { left: -5%; top: 41%; }
+	
+	.gallery-block { padding-top: 30px; }
+	.a-fancybox { width: 80%; margin: 0 auto; padding: 40px; }
+	.a-fancybox a { width: 32.5%; }
+	
+	footer { margin-top: 30px; }
+	.footer-top, .footer-bottom { width: 80%; }
+	.footer-top { padding: 80px 0; }
+	.footer-bottom { padding: 20px 0 90px 0; }
+	.info-title { font-size: 1rem; }
+	
+}/*max-width:1024px*/
+
+
+
+
+
+
+
+
+/* 미디어쿼리 -화면크기가 768px 이하이면 괄호안의 스타일 적용 */
+@media screen and (max-width:768px) {
+	header.sticky {
+		position: fixed;
+		top: 0;
+		height: 50px;
+		background: #fff;
+		z-index: 99;
+		box-shadow: 0 0 5px rgba(0,0,0,.1);
+	}
+
+	header.sticky .h-area { height: 50px; }
+
+	
+	
+	
+	.menu-button, .close-btn { display: block; }
+	.logo { width: 80%; }
+	.menu-button { width: 20%; }
+	.menu-button i { float: right; font-size: 20px; }
+	
+	header nav {
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 30%;
+		/*브라우저 세로 높이 100%*/
+		height: 100vh;
+		background-color: rgba(0,0,0,0.8);
+		z-index: 999;
+		display: none;
+	}
+	.close-btn { float: right; height: 64px; /*background: yellow;*/ }
+	.close-btn img { width: 24px; padding: 20px; }
+	
+	header nav ul { clear: both; padding-top: 10vh; }
+	header nav ul li {
+		width: 100%;
+		padding: 2vh 0;
+		margin-left: 0;
+		text-indent: 30px;
+	}
+	header nav ul li a { color: #fff; letter-spacing: 0.2vw; }
+	header nav ul li a:hover { color: #ffdd40; letter-spacing: 0.8vw; }
+	
+	.type-block { height: 440px; }
+
+	.type-ani {
+		width: 85%;
+		padding-top: 120px;
+	}
+	.type-ani h2 { font-size: 4.7vw; }
+	.type-ani p { font-size: 1.6vw; }
+	
+	.slide-block { padding-bottom: 20px; }
+	.main-slider { width: 85%; }
+	/* next, prev 버튼 */
+	.main-slider .swiper-button-next { display: none; }
+	.main-slider .swiper-button-prev { display: none; }
+
+	.my-skill .skill-slide { width: 100%; height: 140px; margin-top: 40px;  }
+	.sub-title { padding-bottom: 15px; }
+	
+	.a-block { width: 85%; }
+	.pf-block { padding-top: 0; }
+	.my-portfolio .swiper-button-next,
+	.my-portfolio .swiper-button-prev { display: none; }
+	
+
+	
+	
+	
+	footer { margin-top: 0px; }
+	.footer-top, .footer-bottom { width: 85%; }
+	.footer-top { padding: 50px 0; }
+	
+	.ezen-info {
+		padding-right: 50px;
+		width: 100%;
+		padding-bottom: 30px;
+	}
+	.ezen-info > .info-text { padding-top: 10px; }
+	.quick-link { width: 50%; }
+	.quick-link nav ul li a {
+		padding-top: 15px;
+	}
+	.f-sns { width: 50%; }
+	
+	.f-sns ul li a i {
+		color: #999;
+		padding-right: 20px;
+		padding-top: 10px;
+	}
+
+	.f-sns > .info-text { padding-top: 10px; }
+
+}/*max-width:768px*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
